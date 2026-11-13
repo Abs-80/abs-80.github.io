@@ -142,3 +142,8 @@ body:has(.case-modal[open]) {overflow:hidden}
 @media(max-width:740px){.about-philosophy{grid-column:1;margin-top:8px;padding-top:25px}}
 
 .about-grid > .about-layout{max-width:830px}
+
+/* V8: clear studio identity in navigation, without repeating a personal name. */
+.site-header .brand {font-size:17px;letter-spacing:.035em;gap:15px}
+.site-header .brand-name {white-space:nowrap}
+@media(max-width:740px){.site-header .brand{font-size:15px;gap:11px}}
