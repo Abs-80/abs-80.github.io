@@ -7,3 +7,138 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 
 .contact-section .contact-github{color:#e2eee9;border-color:#66817a}.contact-section .contact-note{font-size:12px;color:#94aaa3;margin-top:14px}
+
+/* v2 — case studies now open in individual accessible dialogs, avoiding uneven grid rows. */
+.project-grid {align-items:start}
+.case-study-trigger {background:transparent;border:0;border-top:1px solid #e2e5df;width:100%;margin-top:15px;padding:21px 0;display:flex;align-items:center;justify-content:space-between;cursor:pointer;color:var(--ink);font-size:12px;font-weight:800;text-align:left;font-family:var(--sans)}
+.case-study-trigger:hover {color:#44786c}
+.case-study-trigger span {font-size:17px;transition:transform .2s}
+.case-study-trigger:hover span {transform:translate(3px,-3px)}
+.case-modal {position:fixed;inset:0;width:min(740px,calc(100% - 30px));max-height:min(86vh,900px);margin:auto;border:1px solid #6a8982;background:#f8f6ef;color:#182629;box-shadow:0 30px 110px rgba(0,0,0,.42);padding:0;overflow-y:auto;overscroll-behavior:contain}
+.case-modal::backdrop {background:rgba(11,24,27,.75);backdrop-filter:blur(5px)}
+.case-modal-inner {padding:40px 44px 30px}
+.case-modal-top,.case-modal-footer {display:flex;align-items:center;justify-content:space-between;gap:18px;font-size:10px;letter-spacing:.15em;font-weight:800;color:#607e76}
+.case-modal-close {cursor:pointer;color:inherit;background:transparent;border:1px solid #a6b8b1;width:35px;height:35px;font-size:16px;display:grid;place-items:center;flex:none}
+.case-modal-close:hover {background:#e0ebe4;color:#142427}
+.case-modal h2 {font-size:clamp(36px,6vw,62px);letter-spacing:-.06em;line-height:1.12;margin:30px 0 9px}
+.case-modal-subtitle {font-size:17px;color:#557169;margin-bottom:32px}
+.case-modal-sections {display:grid;grid-template-columns:1fr 1fr;gap:24px;border-top:1px solid #d4dfd8;padding-top:24px}
+.case-modal-sections section:last-child {grid-column:1/-1}
+.case-modal-sections h3 {font-size:13px;letter-spacing:.015em;margin-bottom:10px}
+.case-modal-sections p {font-size:13px;line-height:1.85;color:#5b6e68;margin:0}
+.case-modal-footer {margin-top:35px;padding-top:23px;border-top:1px solid #d4dfd8}
+.case-modal-done {font-size:11px;font-weight:800;letter-spacing:0;display:flex;gap:13px;align-items:center;width:auto;padding:10px 14px}
+body:has(.case-modal[open]) {overflow:hidden}
+/* About section: authentic portrait and professional links. */
+.about-layout {display:grid;grid-template-columns:minmax(0,1.4fr) minmax(240px,.74fr);gap:clamp(25px,5vw,66px);align-items:start}
+.about-heading {font-weight:600;letter-spacing:-.05em;font-size:clamp(30px,3.2vw,42px);line-height:1.16;margin-bottom:31px}
+.about-lead {font-size:clamp(20px,2.2vw,30px)}
+.about-copy {min-width:0}
+.about-portrait {margin:4px 0 0;background:#1b3236;overflow:hidden;border:1px solid #becac2;box-shadow:12px 12px 0 #e1e8e1}
+.about-portrait img {width:100%;height:auto;aspect-ratio:1;display:block;object-fit:cover}
+.about-portrait figcaption {padding:15px 17px;background:#203036;color:#d5e8dc;display:flex;flex-direction:column;gap:6px;font-size:9px;letter-spacing:.12em;font-weight:800}
+.about-portrait figcaption span:last-child {color:#8eb4aa;font-weight:600}
+.about-social-links {display:flex;flex-wrap:wrap;gap:12px;margin:25px 0 26px}
+.about-social-links a {display:flex;justify-content:space-between;gap:22px;align-items:center;background:transparent;border:1px solid #becdc3;padding:13px 16px;color:#2d524b;font-size:12px;font-weight:800}
+.about-social-links a:hover {background:#e2ebe2;border-color:#9cbeb2}
+.about-social-links a span {font-size:15px}
+@media (max-width:1020px) {.about-layout {grid-template-columns:minmax(0,1fr) 260px;gap:30px}}
+@media (max-width:740px) {.about-layout {grid-template-columns:1fr}.about-portrait {max-width:410px}.case-modal-inner {padding:25px 22px}.case-modal-sections {grid-template-columns:1fr;gap:18px}.case-modal-sections section:last-child {grid-column:1}.case-modal-footer {flex-direction:column;align-items:start}}
+
+.contact-socials {display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.contact-socials .button {min-height:55px}
+@media(max-width:440px) {.contact-socials {align-items:stretch;flex-direction:column}}
+
+
+/* v3 — authentic project imagery and localized Canadian product positioning */
+.screenshot-stage {isolation:isolate}
+.screenshot-stage:before {content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 38%,rgba(181,229,211,.24),transparent 67%),repeating-linear-gradient(0deg,transparent 0 43px,rgba(220,246,237,.04) 44px 45px),repeating-linear-gradient(90deg,transparent 0 43px,rgba(220,246,237,.04) 44px 45px)}
+.phone-stack {position:relative;width:100%;height:100%;min-height:inherit;z-index:1}
+.screen-capture {position:absolute;height:78%;width:auto;max-width:none;object-fit:contain;left:50%;top:46%;border-radius:19px;box-shadow:0 22px 45px rgba(3,14,20,.35);background:#eaf0f6;border:3px solid rgba(235,242,239,.7);transition:transform .2s ease}
+.phone-stack-hobwick .screen-middle {height:82%;z-index:3;transform:translate(-50%,-49%)}
+.phone-stack-hobwick .screen-left {height:70%;z-index:2;transform:translate(-111%,-47%) rotate(-9deg);opacity:.9}
+.phone-stack-hobwick .screen-right {height:70%;z-index:2;transform:translate(11%,-47%) rotate(9deg);opacity:.93}
+.phone-stack-loot .screen-loot-main {height:83%;z-index:3;transform:translate(-40%,-51%) rotate(4deg)}
+.phone-stack-loot .screen-loot-left {height:73%;z-index:2;transform:translate(-105%,-49%) rotate(-9deg);opacity:.92}
+.showcase-nameplate {position:absolute;top:24px;left:28px;display:flex;flex-direction:column;gap:4px;color:#e9faf0;z-index:5;text-shadow:0 2px 12px #091c1d}
+.showcase-nameplate strong {font-size:15px;font-weight:850;letter-spacing:.14em}
+.showcase-nameplate span {font-size:8px;letter-spacing:.16em;font-weight:700;opacity:.83}
+.showcase-footnote {position:absolute;left:19px;bottom:14px;font-size:8px;font-weight:800;letter-spacing:.13em;color:#b5d3ce;z-index:5;text-shadow:0 1px 8px #101a1a}
+.project-external {font-size:12px;font-weight:800;color:#285e53;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #e3e8e2;padding:17px 0;margin-top:-1px}
+.project-external:hover {color:#123e34}
+.case-gallery {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin:26px 0 30px}
+.case-gallery figure {margin:0;min-width:0;background:#e9eeec;border:1px solid #d3dfd8;overflow:hidden}
+.case-gallery a {display:block;height:222px;text-align:center;padding:10px 6px;background:linear-gradient(130deg,#e8efe9,#f6f3ee)}
+.case-gallery img {display:block;width:auto;height:100%;max-width:100%;object-fit:contain;margin:auto;border-radius:8px;box-shadow:0 5px 16px rgba(23,33,37,.13)}
+.case-gallery figcaption {font-size:10px;font-weight:750;color:#4a675e;line-height:1.5;padding:10px 8px 13px;min-height:48px;display:flex;justify-content:space-between;gap:5px}
+.case-modal .modal-project-link {font-weight:800;font-size:12px;border-top:1px solid #d4dfd8;padding-top:17px;margin-top:25px;color:#2c7260}
+.case-modal .modal-project-link a:hover {text-decoration:underline}
+.case-modal .case-disclaimer {font-size:11px;line-height:1.6;color:#697c74;margin:18px 0 0}
+@media(max-width:740px){.showcase-nameplate{left:20px;top:16px}.showcase-nameplate strong{font-size:12px}.showcase-nameplate span{font-size:7px}.phone-stack-hobwick .screen-middle{height:80%}.phone-stack-hobwick .screen-left,.phone-stack-hobwick .screen-right{height:67%}.case-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.case-gallery a{height:200px}.phone-stack-loot .screen-loot-main{height:80%}}
+@media(max-width:400px){.screen-capture{border-radius:13px}.phone-stack-hobwick .screen-left{transform:translate(-107%,-47%) rotate(-9deg)}.phone-stack-hobwick .screen-right{transform:translate(7%,-47%) rotate(9deg)}.case-gallery a{height:160px}}
+
+
+/* v4: authentic Godot gameplay/editor and Hobwick app icon */
+.game-shot-stage {isolation:isolate;overflow:hidden;background:radial-gradient(circle at 50% 43%,#314649,#142227 84%)}
+.game-shot-stage::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.6;background:repeating-linear-gradient(90deg,transparent 0 47px,#d6e6e609 48px 49px),repeating-linear-gradient(0deg,transparent 0 47px,#d6e6e609 48px 49px)}
+.game-preview-shell{position:relative;width:100%;height:100%;min-height:inherit;z-index:1}
+.game-preview-main{position:absolute;left:43%;top:47%;width:85%;height:auto;aspect-ratio:16/10;object-fit:contain;transform:translate(-50%,-50%) rotate(-3deg);box-shadow:0 25px 45px #0412199c;border:3px solid #d7e9d86b;border-radius:8px}
+.game-preview-secondary{position:absolute;right:3%;bottom:9%;width:51%;height:auto;aspect-ratio:16/9;object-fit:cover;transform:rotate(5deg);box-shadow:0 15px 35px #041219b3;border:3px solid #cee6dfb5;border-radius:7px}
+.game-showcase-label{position:absolute;top:17px;left:20px;color:#d8eee9;font-size:9px;font-weight:750;letter-spacing:.16em;text-shadow:0 1px 12px #0c1615;z-index:3}
+.game-showcase-label span{opacity:.5;margin-inline:5px}
+.game-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.game-gallery figure{min-width:0}
+.game-gallery a{height:auto;aspect-ratio:16/10;padding:0;overflow:hidden;background:#142125}
+.game-gallery img{width:100%;height:100%;max-width:none;object-fit:contain;box-shadow:none;border-radius:0}
+.game-gallery figcaption{min-height:0;padding:13px;font-size:11px}
+.project-logo-chip{position:absolute;width:58px;height:58px;right:21px;top:18px;z-index:6;object-fit:contain;border:2px solid #e9f3f2ad;border-radius:15px;box-shadow:0 6px 20px #07181faa}
+@media(max-width:740px){.game-preview-main{width:94%;left:45%}.game-preview-secondary{width:52%;right:3%;bottom:13%}.game-gallery{grid-template-columns:1fr}.game-gallery a{aspect-ratio:16/10}.project-logo-chip{width:44px;height:44px;top:14px;right:14px;border-radius:11px}}
+
+/* V5: App identities inside individual case studies; the Tide Link brand stays untouched. */
+.case-identity{display:flex;align-items:center;justify-content:space-between;gap:28px;margin:29px 0 25px}
+.case-identity-text{min-width:0;flex:1}
+.case-identity h2{margin:0 0 10px}
+.case-identity .case-modal-subtitle{margin:0}
+.case-app-icon{display:block;flex:none;width:94px;height:94px;object-fit:contain;border-radius:22px;box-shadow:0 12px 26px rgba(15,37,40,.12);border:1px solid #e0e8e3}
+@media(max-width:740px){.case-identity{gap:15px;margin:21px 0 23px}.case-app-icon{width:64px;height:64px;border-radius:15px}.case-identity h2{font-size:clamp(30px,8vw,45px)}.case-identity .case-modal-subtitle{font-size:13px;line-height:1.5}}
+
+
+/* V6 — Data Intake Suite case study. Standalone internal tool, not a hosted product. */
+.visual-data-intake{isolation:isolate;background:radial-gradient(circle at 47% 43%,#324747 0%,#172327 70%)}
+.visual-data-intake::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 43px,#c0d4cd0b 44px 45px),repeating-linear-gradient(90deg,transparent 0 43px,#c0d4cd0b 44px 45px)}
+.data-preview-shell{height:100%;width:100%;min-height:inherit;position:relative}
+.data-preview-main{position:absolute;width:82%;height:auto;aspect-ratio:8/5;object-fit:contain;left:43%;top:49%;transform:translate(-50%,-50%) rotate(-2deg);border:3px solid #b8dad44d;border-radius:6px;box-shadow:0 30px 60px #030e15a6}
+.data-preview-side{position:absolute;width:55%;height:auto;aspect-ratio:8/5;object-fit:contain;right:3%;bottom:10%;transform:rotate(5deg);border:2px solid #bed9cd91;border-radius:6px;box-shadow:0 14px 34px #030e15aa}
+.data-preview-label{position:absolute;left:22px;top:20px;z-index:2;color:#acd5cb;letter-spacing:.13em;font-size:10px;font-weight:800;text-shadow:0 1px 8px #081010}
+.data-preview-label span{color:#648c84;margin:0 7px}
+.data-card-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:22px 0 14px}
+.data-card-metrics div{border-top:1px solid #d7e0d8;padding-top:10px;display:flex;flex-direction:column;gap:6px}
+.data-card-metrics strong{font-size:clamp(17px,1.7vw,24px);letter-spacing:-.04em;line-height:1;color:#233f3d}
+.data-card-metrics span{font-size:10px;color:#697c73;line-height:1.45}
+.data-case-intro{color:#5b706b;font-size:14px;line-height:1.85}
+.data-stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin:22px 0 11px}
+.data-stat-grid div{background:#e6eee7;border-top:2px solid #76a597;padding:17px 12px;min-width:0}
+.data-stat-grid strong{display:block;font-size:clamp(17px,2.4vw,25px);letter-spacing:-.05em;color:#264c45}
+.data-stat-grid span{display:block;font-size:10px;color:#58736a;line-height:1.5;margin-top:8px}
+.data-stat-note{font-size:11px;color:#6f7e79;line-height:1.65;margin:0 0 23px}
+.data-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.data-gallery a{height:auto;aspect-ratio:8/5;padding:0;background:#10151c;overflow:hidden}
+.data-gallery img{width:100%;height:100%;max-width:none;object-fit:contain;border-radius:0;box-shadow:none}
+.data-gallery figcaption{min-height:0}
+.data-flow{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin:12px 0 24px;padding:16px;background:#e3eee8;color:#325e54}
+.data-flow span{font-size:10px;font-weight:750}
+.data-flow b{font-size:15px;font-weight:400;color:#82a99b}
+.data-case-sections section:last-child{grid-column:1/-1}
+@media(max-width:740px){.data-preview-main{width:95%;left:44%}.data-preview-side{width:54%;right:3%;bottom:14%}.data-stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.data-card-metrics strong{font-size:18px}.data-gallery{grid-template-columns:1fr}}
+@media(max-width:400px){.data-card-metrics{gap:6px}.data-card-metrics strong{font-size:16px}.data-card-metrics span{font-size:9px}}
+
+/* V7: personal development philosophy, directly below profile and portrait. */
+.about-philosophy{grid-column:2;max-width:830px;border-top:1px solid #cbd6cc;padding:31px 0 2px;margin-top:8px}
+.about-philosophy-kicker{display:flex;align-items:center;gap:11px;color:#5b877c;font-size:10px;font-weight:800;letter-spacing:.16em}
+.philosophy-dot{height:7px;width:7px;border-radius:50%;background:#76ab9e;box-shadow:0 0 0 4px #dce9e1}
+.about-philosophy h3{font-size:clamp(25px,3vw,37px);letter-spacing:-.045em;line-height:1.2;font-weight:650;margin:21px 0 15px}
+.about-philosophy h3 em{font-family:var(--serif);font-weight:400}
+.about-philosophy p{font-size:14px;color:#566f67;line-height:1.9;margin-bottom:13px}
+@media(max-width:740px){.about-philosophy{grid-column:1;margin-top:8px;padding-top:25px}}
+
+.about-grid > .about-layout{max-width:830px}
